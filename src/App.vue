@@ -32,7 +32,7 @@ export default {
     name: 'app',
     data() {
         return {
-            api_key: '#api key here',
+            api_key: '37b61a9640fe8b17eddb23b1d16aeb4f',
             url_base: 'https://api.openweathermap.org/data/2.5',
             query: '',
             weather: {},
@@ -103,7 +103,7 @@ export default {
 }
 
 body {
-    font-family: 'montserrat', sans-serif;
+    font-family: 'montserrat', sans-serif !important;
 }
 
 #app {
@@ -134,6 +134,7 @@ main {
     width: 100%;
     padding: 15px;
     color: #313131;
+    font-family: 'montserrat', sans-serif;
     font-size: 20px;
     appearance: none;
     border: none;
