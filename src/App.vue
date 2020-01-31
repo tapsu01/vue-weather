@@ -1,9 +1,11 @@
 <template>
     <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm': ''">
         <main>
-            <button type="button" @click="getLocation">Location</button>
             <div class="search-box">
                 <input type="text" name="" value="" class="search-bar" placeholder="Search..." v-model="query" @keypress="weatherCityName">
+                <button type="button" @click="getLocation" class="placeholder">
+                    <img src="./assets/placeholder.png" alt="placeholder">
+                </button>
             </div>
             <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
                 <div class="location-box">
@@ -30,18 +32,19 @@ export default {
     name: 'app',
     data() {
         return {
-            api_key: '',
+            api_key: '37b61a9640fe8b17eddb23b1d16aeb4f',
             url_base: 'https://api.openweathermap.org/data/2.5',
             query: '',
             weather: {},
             lat: '',
-            long: ''
+            long: '',
+            temp: {}
         }
     },
     created() {
-        if( "geolocation" in navigator ) {
-            navigator.geolocation.getCurrentPosition(this.showPosition);
-        }
+        // if( "geolocation" in navigator ) {
+        //     navigator.geolocation.getCurrentPosition(this.showPosition);
+        // }
     },
     methods: {
         weatherCityName(e) {
@@ -77,6 +80,7 @@ export default {
         },
         getLocation() {
             if (navigator.geolocation) {
+                console.log(navigator.geolocation);
                 navigator.geolocation.getCurrentPosition(this.showPosition);
             } else {
                 alert("Geolocation is not supported by this browser.");
@@ -122,6 +126,7 @@ main {
 .search-box {
     width: 100%;
     margin-bottom: 30px;
+    position: relative;
 }
 
 .search-box .search-bar {
@@ -144,6 +149,18 @@ main {
     box-shadow: 0 0 16px rgba(0,0,0,.25);
     background-color: rgba(255,255,255,.75);
     border-radius: 16px 0;
+}
+
+.search-box .placeholder {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 50%;
+    background: transparent;
+    padding: 9px 10px;
+    border: none;
+    outline: none;
+    filter: invert(42%) sepia(3%) saturate(0%) hue-rotate(203deg) brightness(93%) contrast(99%);
 }
 
 .location-box .location {
