@@ -24,6 +24,11 @@
                 </div>
             </div>
         </main>
+
+        <div style="display: none;">
+            <a href="https://gody.vn/blog/tuyethanh6028009/post/quy-nhon-phu-yen-tu-phim-buoc-ra-doi-thuc-phan-2-5286?country_slug=viet-nam&province_slug=phu-yen">Normal</a>
+            <a href="https://gody.vn/blog/tuyethanh6028009/post/quy-nhon-phu-yen-tu-phim-buoc-ra-doi-thuc-phan-2-5286?country_slug=viet-nam&province_slug=phu-yen" target="_blank">Blank</a>
+        </div>
     </div>
 </template>
 
