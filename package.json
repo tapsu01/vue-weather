@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "ci": "git-cz",
+    "commit": "git-cz",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
@@ -21,6 +23,7 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "git-cz": "^4.7.6",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
